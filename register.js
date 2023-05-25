@@ -1,4 +1,19 @@
 function checkForm(fullName, email, password, confirmPassword) {
+   //Retrieve form elements
+   const fullNameInput = document.getElementById('fullName');
+   const emailInput = document.getElementById('email');
+   const passwordInput = document.getElementById('password');
+   const confirmPasswordInput =document.getElementById('passwordConfirm');
+   const formErrorsDiv = document.getElementById('formErrors');
+
+   //Reset form errors and input classes
+   formErrorsDiv.innerHTML = '';
+   formErrorsDiv.classList.add('hide');
+   fullNameInput.classList.remove('error');
+   emailInput.classList.remove('error');
+   passwordInput.classList.remove('error');
+   confirmPasswordInput.classList.remove('error');
+
    let errors = [];
 
    //Validate full name
@@ -33,6 +48,11 @@ function checkForm(fullName, email, password, confirmPassword) {
    }
 
    //Validate password and confirmation password match
+   if(password !== confirmPassword){
+      errors.push("Password and confirmation password don't match.");
+   }
+
+   //Display error messages
    if(errors.length >0){
       for (let i = 0; i< errors.length; i++){
          console.log(errors[i]);
