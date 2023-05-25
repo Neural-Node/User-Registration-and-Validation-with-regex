@@ -13,22 +13,26 @@
          <div>
             <label for="fullName">Full Name</label>
             <input type="text" id="fullName" name="fullName">
+            <span id= "fullNameError" class="error-message"></span>
          </div>
          <div>
             <label for="email">Email</label>
             <input type="email" id="email" name="email" >
+            <span id="emailError" class="error-message"></span>
          </div>
          <div>
             <label for="password">Password</label>
             <input type="password" id="password" name="password" >
+            <span id="passwordError" class="error-message"></span>
          </div>
          <div>
-            <label for="passwordConfirm">Confirm Password</label>
-            <input type="password" id="passwordConfirm" name="passwordConfirm" >
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" >
+            <span id="confirmPasswordError" class="error-message"></span>
          </div>
          <div id="formErrors"></div>
          <div>
-            <input type="submit" id="submit" value="Register">
+            <input type="submit" id="submit" value="Register" onclick="checkForm()">
          </div>
       </form>
    </body>
